@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qxc.dao.LotteryResultMapper" >
+  <resultMap id="BaseResultMap" type="com.qxc.pojo.LotteryResult" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="codeid" property="codeid" jdbcType="INTEGER" />
+    <result column="year" property="year" jdbcType="INTEGER" />
+    <result column="b1" property="b1" jdbcType="INTEGER" />
+    <result column="b2" property="b2" jdbcType="INTEGER" />
+    <result column="b3" property="b3" jdbcType="INTEGER" />
+    <result column="b4" property="b4" jdbcType="INTEGER" />
+    <result column="b5" property="b5" jdbcType="INTEGER" />
+    <result column="b6" property="b6" jdbcType="INTEGER" />
+    <result column="b7" property="b7" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, codeid, year, b1, b2, b3, b4, b5, b6, b7
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LotteryResult
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LotteryResult
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qxc.pojo.LotteryResult" >
+    insert into LotteryResult (id, codeid, year, 
+      b1, b2, b3, b4, 
+      b5, b6, b7)
+    values (#{id,jdbcType=INTEGER}, #{codeid,jdbcType=INTEGER}, #{year,jdbcType=INTEGER}, 
+      #{b1,jdbcType=INTEGER}, #{b2,jdbcType=INTEGER}, #{b3,jdbcType=INTEGER}, #{b4,jdbcType=INTEGER}, 
+      #{b5,jdbcType=INTEGER}, #{b6,jdbcType=INTEGER}, #{b7,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qxc.pojo.LotteryResult" >
+    insert into LotteryResult
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="codeid != null" >
+        codeid,
+      </if>
+      <if test="year != null" >
+        year,
+      </if>
+      <if test="b1 != null" >
+        b1,
+      </if>
+      <if test="b2 != null" >
+        b2,
+      </if>
+      <if test="b3 != null" >
+        b3,
+      </if>
+      <if test="b4 != null" >
+        b4,
+      </if>
+      <if test="b5 != null" >
+        b5,
+      </if>
+      <if test="b6 != null" >
+        b6,
+      </if>
+      <if test="b7 != null" >
+        b7,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="codeid != null" >
+        #{codeid,jdbcType=INTEGER},
+      </if>
+      <if test="year != null" >
+        #{year,jdbcType=INTEGER},
+      </if>
+      <if test="b1 != null" >
+        #{b1,jdbcType=INTEGER},
+      </if>
+      <if test="b2 != null" >
+        #{b2,jdbcType=INTEGER},
+      </if>
+      <if test="b3 != null" >
+        #{b3,jdbcType=INTEGER},
+      </if>
+      <if test="b4 != null" >
+        #{b4,jdbcType=INTEGER},
+      </if>
+      <if test="b5 != null" >
+        #{b5,jdbcType=INTEGER},
+      </if>
+      <if test="b6 != null" >
+        #{b6,jdbcType=INTEGER},
+      </if>
+      <if test="b7 != null" >
+        #{b7,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qxc.pojo.LotteryResult" >
+    update LotteryResult
+    <set >
+      <if test="codeid != null" >
+        codeid = #{codeid,jdbcType=INTEGER},
+      </if>
+      <if test="year != null" >
+        year = #{year,jdbcType=INTEGER},
+      </if>
+      <if test="b1 != null" >
+        b1 = #{b1,jdbcType=INTEGER},
+      </if>
+      <if test="b2 != null" >
+        b2 = #{b2,jdbcType=INTEGER},
+      </if>
+      <if test="b3 != null" >
+        b3 = #{b3,jdbcType=INTEGER},
+      </if>
+      <if test="b4 != null" >
+        b4 = #{b4,jdbcType=INTEGER},
+      </if>
+      <if test="b5 != null" >
+        b5 = #{b5,jdbcType=INTEGER},
+      </if>
+      <if test="b6 != null" >
+        b6 = #{b6,jdbcType=INTEGER},
+      </if>
+      <if test="b7 != null" >
+        b7 = #{b7,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qxc.pojo.LotteryResult" >
+    update LotteryResult
+    set codeid = #{codeid,jdbcType=INTEGER},
+      year = #{year,jdbcType=INTEGER},
+      b1 = #{b1,jdbcType=INTEGER},
+      b2 = #{b2,jdbcType=INTEGER},
+      b3 = #{b3,jdbcType=INTEGER},
+      b4 = #{b4,jdbcType=INTEGER},
+      b5 = #{b5,jdbcType=INTEGER},
+      b6 = #{b6,jdbcType=INTEGER},
+      b7 = #{b7,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
