@@ -1,0 +1,51 @@
+server:
+    #端口号
+    port: 9999
+    #项目名，如果不设定，默认是 /
+    context-path: /qxc
+spring:
+    servlet:
+        multipart:
+            enabled: true
+            max-file-size: 20MB
+            max-request-size: 200MB
+    datasource:
+        name: source
+        url: jdbc:sqlite::resource:qxc.db
+        username: root
+        password: root
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: org.sqlite.JDBC
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+    mvc:  
+        view:  
+            prefix: /  
+            suffix: .jsp
+
+
+mybatis: 
+  mapperLocations: classpath:mappings/*.xml
+  typeAliasesPackage: com.qxc.pojo
+
+
+
+
+logging:
+    level:
+        com.hrx.pm.dao.BiddingPriceMapper: DEBUG
+        com.hrx.pm.dao.ProductMapper: DEBUG
+        com.hrx.pm.dao.SysUsersMapper: DEBUG
+        com.hrx.pm.dao.UsersMapper: DEBUG
