@@ -1,9 +1,24 @@
 package com.qxc.pojo;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
 public class SpiritCode {
+
+    public SpiritCode(){}
+
+    public SpiritCode(Integer code, String color, String shengxiao, String jmsht, Integer year) {
+
+        this.code = code;
+        this.color = color;
+        this.shengxiao = shengxiao;
+        this.jmsht = jmsht;
+        this.year = year;
+    }
+
     private Integer id;
 
     private Integer code;
+
 
     private String color;
 

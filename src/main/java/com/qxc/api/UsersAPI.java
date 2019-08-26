@@ -1,30 +1,27 @@
 package com.qxc.api;
 
-import com.qxc.dao.UsersMapper;
+
 import com.qxc.pojo.Users;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
+import com.qxc.services.UsersServices;
+import com.qxc.utils.APIRequest;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
 @RestController
+@RequestMapping("/api")
 public class UsersAPI {
 
     @Resource
-    UsersMapper mapper;
+    UsersServices services;
 
-    @Transactional
-    @RequestMapping("register.do")
-    public Object register(Users users){
-        System.out.println("------------------");
-        int insert = mapper.insert(users);
-//        int i = mapper.deleteByPrimaryKey(1);
-//        System.out.println(i);
-        Users users1 = mapper.selectByPrimaryKey(1);
-        System.out.println(users1);
-        return mapper.selectByPrimaryKey(1);
+    @RequestMapping("login.do")
+    public APIRequest login(Users users){
+        return services.login(users);
     }
+
+
 
 }

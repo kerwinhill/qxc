@@ -39,13 +39,16 @@
                         </td>
                         <td>
                             <select>
-                                <option style="color: red">红色</option>
-                                <option style="color: green">绿色</option>
-                                <option style="color: blue">蓝色</option>
+                                <option>请选择颜色</option>
+                                <option style="background-color: red;color: white">红色</option>
+                                <option style="background-color: green;color: white">绿色</option>
+                                <option style="background-color: blue;color: white">蓝色</option>
                             </select>
                         </td>
                         <td width="10%">
                             <select>
+                                <option>请选择生肖</option>
+
                                 <option style="color: orangered">子鼠</option>
                                 <option style="color: orangered">丑牛</option>
                                 <option style="color: orangered">寅虎</option>
@@ -63,49 +66,31 @@
                         </td>
                         <td>
                             <select>
+                                <option>请选择五行</option>
                                 <option style="color: orangered">金</option>
-                                <option style="color: orangered">木</option>
-                                <option style="color: orangered">水</option>
-                                <option style="color: orangered">火</option>
-                                <option style="color: orangered">土</option>
+                                <option style="color: green">木</option>
+                                <option style="color: #03b6fd">水</option>
+                                <option style="color: red">火</option>
+                                <option style="color: #abab28">土</option>
 
                             </select>
                         </td>
                         <td>2019</td>
 
                     </tr>
-
-            </table>
-        </div>
-    </div>
-</div>
-
-
-
-<div id="tenant-model-box2" class="tenant-model">
-    <div class="tenant-model-content">
-        <header class="tenant-model-header">
-            <h4 style="margin-left: 20px;padding:5px;font-weight: bold;height: 30px;line-height: 30px;">请选择你要修改的数据</h4>
-            <span id="closeModel2">×</span>
-        </header>
-        <div class="tenant-model-body">
-            <table  class="table table-hover text-center" width="700px">
-                <thead>
                     <tr>
-                        <th width="20%" style="text-align:left; padding-left:20px;">球号</th>
-                        <th width="20%">颜色</th>
-                        <th width="20%">生肖</th>
-                        <th width="20%">五行</th>
-                        <th width="20%">年份</th>
+                        <td colspan="5" align="center">
+                            <button>修改</button>
+                        </td>
                     </tr>
-                </thead>
-                <tbody id="addtable">
 
-                </tbody>
             </table>
         </div>
     </div>
 </div>
+
+
+
 
 
 
@@ -118,8 +103,8 @@
         <div class="padding border-bottom">
             <ul class="search" style="padding-left:10px;">
                 <li>
-                    <a class="button border-main icon-plus-square-o" href="#" id="addCode"> 生成新球码</a>
-                    <a class="button border-red" href="javascript:void(0)" onclick="return del(1,1,1)">
+                    <a class="button border-main icon-plus-square-o" href="addcode.html" > 生成新球码</a>
+
               <span class="icon-trash-o">
               </span> 删除当前年份所有号码
                     </a>
@@ -155,11 +140,10 @@
                     <td>2019</td>
                     <td>
                         <div class="button-group">
-                            <a class="button border-main" href="add.html">
+                            <a class="button border-main" id="triggerBtn" onclick="show()" href="#">
                                 <span class="icon-edit"></span> 修改
                             </a>
-                            <!-- 触发按钮 -->
-                            <button id="triggerBtn" onclick="show()" type="button">模态框</button>
+
                         </div>
                     </td>
                 </tr>

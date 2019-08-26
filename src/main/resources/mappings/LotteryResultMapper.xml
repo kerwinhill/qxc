@@ -14,7 +14,7 @@
     <result column="b7" property="b7" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, codeid, year, b1, b2, b3, b4, b5, b6, b7
+    id, codeid, year, b1, b2, b3, b4, b5, b6, b7,timer
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -29,10 +29,10 @@
   <insert id="insert" parameterType="com.qxc.pojo.LotteryResult" >
     insert into LotteryResult (id, codeid, year, 
       b1, b2, b3, b4, 
-      b5, b6, b7)
+      b5, b6, b7,timer)
     values (#{id,jdbcType=INTEGER}, #{codeid,jdbcType=INTEGER}, #{year,jdbcType=INTEGER}, 
       #{b1,jdbcType=INTEGER}, #{b2,jdbcType=INTEGER}, #{b3,jdbcType=INTEGER}, #{b4,jdbcType=INTEGER}, 
-      #{b5,jdbcType=INTEGER}, #{b6,jdbcType=INTEGER}, #{b7,jdbcType=INTEGER})
+      #{b5,jdbcType=INTEGER}, #{b6,jdbcType=INTEGER}, #{b7,jdbcType=INTEGER},#{timer})
   </insert>
   <insert id="insertSelective" parameterType="com.qxc.pojo.LotteryResult" >
     insert into LotteryResult

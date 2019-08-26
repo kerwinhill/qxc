@@ -12,7 +12,9 @@ public interface UsersMapper {
 
     int insertSelective(Users record);
 
-    @Select("select * from tb_users where userid = 1")
+    @Select("select * from tb_users where username = #{username} and pwd = #{pwd}")
+    Users login(Users user);
+
     Users selectByPrimaryKey(Integer userid);
 
     int updateByPrimaryKeySelective(Users record);
