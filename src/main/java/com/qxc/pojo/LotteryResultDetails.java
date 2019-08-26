@@ -9,44 +9,44 @@ public class LotteryResultDetails {
     private Integer b1;
     private Integer b1code;
     private String b1color;
-    private String b1shegnxiao;
+    private String b1shengxiao;
     private String b1jmsht;
 
 
     private Integer b2;
     private Integer b2code;
     private String b2color;
-    private String b2shegnxiao;
+    private String b2shengxiao;
     private String b2jmsht;
 
     private Integer b3;
     private Integer b3code;
     private String b3color;
-    private String b3shegnxiao;
+    private String b3shengxiao;
     private String b3jmsht;
 
     private Integer b4;
     private Integer b4code;
     private String b4color;
-    private String b4shegnxiao;
+    private String b4shengxiao;
     private String b4jmsht;
 
     private Integer b5;
     private Integer b5code;
     private String b5color;
-    private String b5shegnxiao;
+    private String b5shengxiao;
     private String b5jmsht;
 
     private Integer b6;
     private Integer b6code;
     private String b6color;
-    private String b6shegnxiao;
+    private String b6shengxiao;
     private String b6jmsht;
 
     private Integer b7;
     private Integer b7code;
     private String b7color;
-    private String b7shegnxiao;
+    private String b7shengxiao;
     private String b7jmsht;
 
 
@@ -155,12 +155,12 @@ public class LotteryResultDetails {
         this.b1color = b1color;
     }
 
-    public String getB1shegnxiao() {
-        return b1shegnxiao;
+    public String getB1shengxiao() {
+        return b1shengxiao;
     }
 
-    public void setB1shegnxiao(String b1shegnxiao) {
-        this.b1shegnxiao = b1shegnxiao;
+    public void setB1shengxiao(String b1shengxiao) {
+        this.b1shengxiao = b1shengxiao;
     }
 
     public String getB1jmsht() {
@@ -187,12 +187,12 @@ public class LotteryResultDetails {
         this.b2color = b2color;
     }
 
-    public String getB2shegnxiao() {
-        return b2shegnxiao;
+    public String getB2shengxiao() {
+        return b2shengxiao;
     }
 
-    public void setB2shegnxiao(String b2shegnxiao) {
-        this.b2shegnxiao = b2shegnxiao;
+    public void setB2shengxiao(String b2shengxiao) {
+        this.b2shengxiao = b2shengxiao;
     }
 
     public String getB2jmsht() {
@@ -219,12 +219,12 @@ public class LotteryResultDetails {
         this.b3color = b3color;
     }
 
-    public String getB3shegnxiao() {
-        return b3shegnxiao;
+    public String getB3shengxiao() {
+        return b3shengxiao;
     }
 
-    public void setB3shegnxiao(String b3shegnxiao) {
-        this.b3shegnxiao = b3shegnxiao;
+    public void setB3shengxiao(String b3shengxiao) {
+        this.b3shengxiao = b3shengxiao;
     }
 
     public String getB3jmsht() {
@@ -251,12 +251,12 @@ public class LotteryResultDetails {
         this.b4color = b4color;
     }
 
-    public String getB4shegnxiao() {
-        return b4shegnxiao;
+    public String getB4shengxiao() {
+        return b4shengxiao;
     }
 
-    public void setB4shegnxiao(String b4shegnxiao) {
-        this.b4shegnxiao = b4shegnxiao;
+    public void setB4shengxiao(String b4shengxiao) {
+        this.b4shengxiao = b4shengxiao;
     }
 
     public String getB4jmsht() {
@@ -283,12 +283,12 @@ public class LotteryResultDetails {
         this.b5color = b5color;
     }
 
-    public String getB5shegnxiao() {
-        return b5shegnxiao;
+    public String getB5shengxiao() {
+        return b5shengxiao;
     }
 
-    public void setB5shegnxiao(String b5shegnxiao) {
-        this.b5shegnxiao = b5shegnxiao;
+    public void setB5shengxiao(String b5shengxiao) {
+        this.b5shengxiao = b5shengxiao;
     }
 
     public String getB5jmsht() {
@@ -315,12 +315,12 @@ public class LotteryResultDetails {
         this.b6color = b6color;
     }
 
-    public String getB6shegnxiao() {
-        return b6shegnxiao;
+    public String getB6shengxiao() {
+        return b6shengxiao;
     }
 
-    public void setB6shegnxiao(String b6shegnxiao) {
-        this.b6shegnxiao = b6shegnxiao;
+    public void setB6shengxiao(String b6shengxiao) {
+        this.b6shengxiao = b6shengxiao;
     }
 
     public String getB6jmsht() {
@@ -347,12 +347,12 @@ public class LotteryResultDetails {
         this.b7color = b7color;
     }
 
-    public String getB7shegnxiao() {
-        return b7shegnxiao;
+    public String getB7shengxiao() {
+        return b7shengxiao;
     }
 
-    public void setB7shegnxiao(String b7shegnxiao) {
-        this.b7shegnxiao = b7shegnxiao;
+    public void setB7shengxiao(String b7shengxiao) {
+        this.b7shengxiao = b7shengxiao;
     }
 
     public String getB7jmsht() {
