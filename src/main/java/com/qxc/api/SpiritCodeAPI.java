@@ -36,6 +36,7 @@ public class SpiritCodeAPI {
     }
 
 
+    @RequestMapping("/editSpiritCode.do")
     public APIRequest edit(SpiritCode sc){
         return services.edit(sc);
     }

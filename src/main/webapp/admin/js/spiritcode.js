@@ -5,7 +5,7 @@ function addspiritcode(){
         type:"POST",
         data:$('#listform').serialize(),
         success:function(data){
-            alert(data);
+            alert(data.msg);
             location.href = "spiritcode.html";
         }
     });
@@ -14,7 +14,7 @@ function addspiritcode(){
 
 
 function loaddata(){
-
+    $("#listcontent").empty();
     $.ajax({
         url:"../api/loadSpiritCode.do",
         type:"post",
@@ -36,7 +36,7 @@ function loaddata(){
                     "                    <td>"+data.data[i].year+"</td>\n" +
                     "                    <td>\n" +
                     "                        <div class=\"button-group\">\n" +
-                    "                            <a class=\"button border-main\" id=\"triggerBtn\" onclick=\"show()\" href=\"#\">\n" +
+                    "                            <a class=\"button border-main\" id=\"triggerBtn\" onclick=\"showbox("+data.data[i].id+","+data.data[i].code+","+data.data[i].year+",'"+data.data[i].color+"','"+data.data[i].jmsht+"','"+data.data[i].shengxiao+"')\" >\n" +
                     "                                <span class=\"icon-edit\"></span> 修改\n" +
                     "                            </a>\n" +
                     "\n" +
@@ -45,6 +45,7 @@ function loaddata(){
                     "                </tr>";
                 sumitem += item;
             }
+
             $("#listcontent").html(sumitem);
 
         }
@@ -89,7 +90,6 @@ function deleteSpiritCode(){
                 alert(data.msg);
                 var y = loadmaxyear();
                 $("#yearcheck").val(y)
-                $("#textYear").html(y)
                 loaddata();
             }
         });
@@ -97,4 +97,43 @@ function deleteSpiritCode(){
 
 
 
+}
+
+
+
+
+
+function deleteSpiritCode(){
+
+    if(confirm("您確定要刪除"+$("#yearcheck").val()+"年的號碼記錄嗎？")){
+        $.ajax({
+            url: "../api/deleteSpiritCode.do",
+            type: "post",
+            data: {year: $("#yearcheck").val()},
+            success: function (data) {
+                alert(data.msg);
+                var y = loadmaxyear();
+                $("#yearcheck").val(y)
+                loaddata();
+            }
+        });
+    }
+
+
+
+}
+
+
+function editSpiritCode(){
+
+    $.ajax({
+        url:"../api/editSpiritCode.do",
+        type:"POST",
+        data:$('#editform').serialize(),
+        success:function(data){
+            alert(data.msg);
+            loaddata();
+            closebox();
+        }
+    });
 }

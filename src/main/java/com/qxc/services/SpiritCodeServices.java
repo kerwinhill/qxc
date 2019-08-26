@@ -21,9 +21,6 @@ public class SpiritCodeServices {
         if(scs != null){
             int sum = 0;
             for (int i = 0; i < scs.length; i++) {
-
-                System.out.println(scs[i].toString());
-
                 int result = mapper.insertSelective(scs[i]);
                 if(result > 0){
                     sum++;
@@ -39,8 +36,10 @@ public class SpiritCodeServices {
 
 
     public APIRequest edit(SpiritCode sc){
+
         APIRequest request = new APIRequest(false,"参数异常！");
         if(sc != null){
+            System.out.println(sc.getId()+"-----"+sc.getCode());
             int i = mapper.updateByPrimaryKeySelective(sc);
             if(i > 0){
                 request = new APIRequest(true,"成功！");

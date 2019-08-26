@@ -11,82 +11,112 @@
     <link rel="stylesheet" href="css/admin.css">
     <script src="js/jquery.js"></script>
     <script src="js/pintuer.js"></script>
+    <script>
 
+        function closebox(){
+
+            $("#tenant-model-box").hide();
+        }
+
+        function showbox(id,code,year,color,jmsht,shengxiao){
+            $("#scidtd").html(code+"<input id=\"code\" name=\"code\" type='hidden' value=\""+code+"\">\n" +
+                "<input id=\"scid\" name=\"id\" type='hidden' value=\""+id+"\">");
+            $("#yeartd").html(year+"<input id=\"ye\" name=\"year\" type='hidden' value=\""+year+"\">");
+
+
+            $("#editcolor option").removeAttr("selected");
+            $("#editcolor option[value='"+color+"']").attr("selected","selected");
+
+            $("#editjmsht option").removeAttr("selected");
+            $("#editjmsht option[value='"+jmsht+"']").attr("selected","selected");
+            console.log(jmsht);
+            $("#editshengxiao option").removeAttr("selected");
+            $("#editshengxiao option[value='"+shengxiao+"']").attr("selected","selected");
+
+
+
+            $("#tenant-model-box").show();
+        }
+
+
+    </script>
 
 </head>
 <body>
-<div id="tenant-model-box" class="tenant-model">
-    <div class="tenant-model-content">
-        <header class="tenant-model-header">
-            <h4 style="margin-left: 20px;padding:5px;font-weight: bold;height: 30px;line-height: 30px;">请选择你要修改的数据</h4>
-            <span id="closeModel">×</span>
-        </header>
-        <div class="tenant-model-body">
-            <table class="table table-hover text-center" width="700px">
-                <tr>
-                    <th width="20%" style="text-align:left; padding-left:20px;">球号</th>
-                    <th width="20%">颜色</th>
-                    <th width="20%">生肖</th>
-                    <th width="20%">五行</th>
-                    <th width="20%">年份</th>
-
-
-                </tr>
-                <volist name="list" id="vo">
+<form method="post" id="editform">
+    <div id="tenant-model-box" class="tenant-model">
+        <div class="tenant-model-content">
+            <header class="tenant-model-header">
+                <h4 style="margin-left: 20px;padding:5px;font-weight: bold;height: 30px;line-height: 30px;">请选择你要修改的数据</h4>
+                <a onclick="closebox()"><span id="closeModel">×</span></a>
+            </header>
+            <div class="tenant-model-body">
+                <table class="table table-hover text-center" width="700px">
                     <tr>
-                        <td style="text-align:left; padding-left:20px;">
-                            1
-                        </td>
-                        <td>
-                            <select>
-                                <option>请选择颜色</option>
-                                <option style="background-color: red;color: white">红色</option>
-                                <option style="background-color: green;color: white">绿色</option>
-                                <option style="background-color: blue;color: white">蓝色</option>
-                            </select>
-                        </td>
-                        <td width="10%">
-                            <select>
-                                <option style="color: orangered">鼠</option>
-                                <option style="color: orangered">牛</option>
-                                <option style="color: orangered">虎</option>
-                                <option style="color: orangered">兔</option>
-                                <option style="color: orangered">龙</option>
-                                <option style="color: orangered">蛇</option>
-                                <option style="color: orangered">马</option>
-                                <option style="color: orangered">羊</option>
-                                <option style="color: orangered">猴</option>
-                                <option style="color: orangered">鸡</option>
-                                <option style="color: orangered">狗</option>
-                                <option style="color: orangered">亥猪</option>
+                        <th width="20%" style="text-align:left; padding-left:20px;">球号</th>
+                        <th width="20%">颜色</th>
+                        <th width="20%">生肖</th>
+                        <th width="20%">五行</th>
+                        <th width="20%">年份</th>
 
-                            </select>
-                        </td>
-                        <td>
-                            <select>
-                                <option>请选择五行</option>
-                                <option style="color: orangered">金</option>
-                                <option style="color: green">木</option>
-                                <option style="color: #03b6fd">水</option>
-                                <option style="color: red">火</option>
-                                <option style="color: #abab28">土</option>
-
-                            </select>
-                        </td>
-                        <td>2019</td>
 
                     </tr>
-                    <tr>
-                        <td colspan="5" align="center">
-                            <button>修改</button>
-                        </td>
-                    </tr>
+                    <volist name="list" id="vo">
+                        <tr>
+                            <td id="scidtd" style="text-align:left; padding-left:20px;">
 
-            </table>
+
+                            </td>
+                            <td>
+                                <select id="editcolor" name="color">
+
+                                    <option style="background-color: red;color: white" value="red">红色</option>
+                                    <option style="background-color: green;color: white" value="green">绿色</option>
+                                    <option style="background-color: blue;color: white" value="blue">蓝色</option>
+                                </select>
+                            </td>
+                            <td width="10%">
+                                <select id="editshengxiao" name="shengxiao">
+                                    <option style="color: orangered" value="鼠">鼠</option>
+                                    <option style="color: orangered" value="牛">牛</option>
+                                    <option style="color: orangered" value="虎">虎</option>
+                                    <option style="color: orangered" value="兔">兔</option>
+                                    <option style="color: orangered" value="龙">龙</option>
+                                    <option style="color: orangered" value="蛇">蛇</option>
+                                    <option style="color: orangered" value="马">马</option>
+                                    <option style="color: orangered" value="羊">羊</option>
+                                    <option style="color: orangered" value="猴">猴</option>
+                                    <option style="color: orangered" value="鸡">鸡</option>
+                                    <option style="color: orangered" value="狗">狗</option>
+                                    <option style="color: orangered" value="猪">猪</option>
+
+                                </select>
+                            </td>
+                            <td>
+                                <select id="editjmsht" name="jmsht">
+
+                                    <option style="color: orangered" value="金">金</option>
+                                    <option style="color: green" value="木">木</option>
+                                    <option style="color: #03b6fd" value="水">水</option>
+                                    <option style="color: red" value="火">火</option>
+                                    <option style="color: #abab28" value="土">土</option>
+
+                                </select>
+                            </td>
+                            <td id="yeartd"></td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="5" align="center">
+                                <button type="button" onclick="editSpiritCode()">修改</button>
+                            </td>
+                        </tr>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 
+</form>
 
 
 
@@ -107,7 +137,7 @@
                         <span class="icon-trash-o"></span> 删除当前年份所有号码
                     </a>
                 </li>
-                <li>当前年份：<span id="textYear" style="color: orangered">2019</span></li>
+                <li>当前年份：</li>
                 <li>
                     <input type="text" id="yearcheck" placeholder="请输入年份：" value="2019" name="keywords" class="input" style="width:250px; line-height:17px;display:inline-block" />
                     <a href="javascript:void(0)" class="button border-main icon-search" onclick="loaddata()" > 搜索</a></li>
@@ -303,14 +333,13 @@
     }
 
 </script>
-<script src="js/modelframe.js"></script>
 <script src="js/spiritcode.js"></script>
 <script>
     $(function(){
         var y = loadmaxyear();
         console.log(y);
         $("#yearcheck").val(y);
-        $("#textYear").html(y);
+
 
         loaddata();
 

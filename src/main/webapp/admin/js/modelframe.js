@@ -1,16 +1,13 @@
 
-$("#closeModel").click(function(){
+function closebox(){
 
     $("#tenant-model-box").hide();
-});
+}
 
-
-
-
-$("#triggerBtn").click(function(){
+function showbox(){
 
     $("#tenant-model-box").show();
-});
+}
 
 
 
