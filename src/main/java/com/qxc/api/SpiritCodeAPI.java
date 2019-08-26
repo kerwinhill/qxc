@@ -44,9 +44,11 @@ public class SpiritCodeAPI {
         return services.delete(year);
     }
 
+    @RequestMapping("/load.do")
     public APIRequest query(Integer year){
         return services.query(year);
     }
+
 
     public APIRequest queryByid(Integer id){
         return services.queryByid(id);

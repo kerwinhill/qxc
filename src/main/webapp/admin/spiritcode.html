@@ -111,7 +111,7 @@
                 </li>
                 <li>当前年份：<font color="red">2019</font></li>
                 <li>
-                    <input type="text" placeholder="请输入年份：" name="keywords" class="input" style="width:250px; line-height:17px;display:inline-block" />
+                    <input type="text" id="yearcheck" placeholder="请输入年份：" value="2019" name="keywords" class="input" style="width:250px; line-height:17px;display:inline-block" />
                     <a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()" > 搜索</a></li>
             </ul>
         </div>
@@ -125,28 +125,10 @@
 
                 <th width="310">操作</th>
             </tr>
-            <volist name="list" id="vo">
-                <tr>
-                    <td style="text-align:left; padding-left:20px;">
-                        1
-                    </td>
-                    <td>
-                        <font color="red">红色</font>
-                    </td>
-                    <td width="10%">
-                        猴
-                    </td>
-                    <td>火</td>
-                    <td>2019</td>
-                    <td>
-                        <div class="button-group">
-                            <a class="button border-main" id="triggerBtn" onclick="show()" href="#">
-                                <span class="icon-edit"></span> 修改
-                            </a>
+          <tbody id="listcontent">
 
-                        </div>
-                    </td>
-                </tr>
+          </tbody>
+
         </table>
     </div>
 </form>
@@ -324,6 +306,13 @@
 
 </script>
 <script src="js/modelframe.js"></script>
+<script src="js/spiritcode.js"></script>
+<script>
+    $(function(){
+        alert("aaa");
+        loaddata($("#yearcheck").val());
+    });
+</script>
 
 </body>
 </html>
