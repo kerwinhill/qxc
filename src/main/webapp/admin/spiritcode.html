@@ -47,19 +47,17 @@
                         </td>
                         <td width="10%">
                             <select>
-                                <option>请选择生肖</option>
-
-                                <option style="color: orangered">子鼠</option>
-                                <option style="color: orangered">丑牛</option>
-                                <option style="color: orangered">寅虎</option>
-                                <option style="color: orangered">卯兔</option>
-                                <option style="color: orangered">辰龙</option>
-                                <option style="color: orangered">巳蛇</option>
-                                <option style="color: orangered">午马</option>
-                                <option style="color: orangered">未羊</option>
-                                <option style="color: orangered">申猴</option>
-                                <option style="color: orangered">酉鸡</option>
-                                <option style="color: orangered">戌狗</option>
+                                <option style="color: orangered">鼠</option>
+                                <option style="color: orangered">牛</option>
+                                <option style="color: orangered">虎</option>
+                                <option style="color: orangered">兔</option>
+                                <option style="color: orangered">龙</option>
+                                <option style="color: orangered">蛇</option>
+                                <option style="color: orangered">马</option>
+                                <option style="color: orangered">羊</option>
+                                <option style="color: orangered">猴</option>
+                                <option style="color: orangered">鸡</option>
+                                <option style="color: orangered">狗</option>
                                 <option style="color: orangered">亥猪</option>
 
                             </select>
@@ -105,14 +103,14 @@
                 <li>
                     <a class="button border-main icon-plus-square-o" href="addcode.html" > 生成新球码</a>
 
-                    <a class="button border-main icon-plus-square-o" onclick="alert('delete');" >
+                    <a class="button border-main icon-plus-square-o" onclick="deleteSpiritCode()" >
                         <span class="icon-trash-o"></span> 删除当前年份所有号码
                     </a>
                 </li>
-                <li>当前年份：<font color="red">2019</font></li>
+                <li>当前年份：<span id="textYear" style="color: orangered">2019</span></li>
                 <li>
                     <input type="text" id="yearcheck" placeholder="请输入年份：" value="2019" name="keywords" class="input" style="width:250px; line-height:17px;display:inline-block" />
-                    <a href="javascript:void(0)" class="button border-main icon-search" onclick="changesearch()" > 搜索</a></li>
+                    <a href="javascript:void(0)" class="button border-main icon-search" onclick="loaddata()" > 搜索</a></li>
             </ul>
         </div>
         <table class="table table-hover text-center">
@@ -309,8 +307,13 @@
 <script src="js/spiritcode.js"></script>
 <script>
     $(function(){
-        alert("aaa");
-        loaddata($("#yearcheck").val());
+        var y = loadmaxyear();
+        console.log(y);
+        $("#yearcheck").val(y);
+        $("#textYear").html(y);
+
+        loaddata();
+
     });
 </script>
 

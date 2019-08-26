@@ -92,4 +92,8 @@ public class SpiritCodeServices {
         return  request;
     }
 
+    public APIRequest queryMaxYear() {
+        Integer integer = mapper.queryMaxYear();
+        return new APIRequest(true,"最近一年數據",integer);
+    }
 }

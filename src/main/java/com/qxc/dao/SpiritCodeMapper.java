@@ -23,4 +23,7 @@ public interface SpiritCodeMapper {
 
     @Select("select * from SpiritCode where year = #{year} ")
     List<SpiritCode> query(Integer year);
+
+    @Select("select max(year) from SpiritCode ")
+    Integer queryMaxYear();
 }

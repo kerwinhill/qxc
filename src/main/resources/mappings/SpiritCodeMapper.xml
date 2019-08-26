@@ -20,7 +20,7 @@
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from SpiritCode
-    where id = #{id,jdbcType=INTEGER}
+    where year = #{year}
   </delete>
   <insert id="insert" parameterType="com.qxc.pojo.SpiritCode" >
     insert into SpiritCode (id, code, color, 

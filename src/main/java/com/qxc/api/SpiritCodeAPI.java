@@ -40,13 +40,19 @@ public class SpiritCodeAPI {
         return services.edit(sc);
     }
 
+    @RequestMapping("/deleteSpiritCode.do")
     public APIRequest delete(Integer year){
         return services.delete(year);
     }
 
-    @RequestMapping("/load.do")
+    @RequestMapping("/loadSpiritCode.do")
     public APIRequest query(Integer year){
         return services.query(year);
+    }
+
+    @RequestMapping("/loadmaxyear.do")
+    public APIRequest queryMaxYear(Integer year){
+        return services.queryMaxYear();
     }
 
 

@@ -6,19 +6,19 @@ function addspiritcode(){
         data:$('#listform').serialize(),
         success:function(data){
             alert(data);
-            location.href = "index.html";
+            location.href = "spiritcode.html";
         }
     });
 }
 
 
 
-function loaddata(year){
+function loaddata(){
 
     $.ajax({
-        url:"../api/load.do",
+        url:"../api/loadSpiritCode.do",
         type:"post",
-        data:{year:year},
+        data:{year:$("#yearcheck").val()},
         success:function(data){
             var sumitem = "";
             for (var i = 0; i < data.data.length; i++) {
@@ -27,7 +27,7 @@ function loaddata(year){
                     "                        "+data.data[i].code+"\n" +
                     "                    </td>\n" +
                     "                    <td>\n" +
-                    "                        <font color=\"red\">"+data.data[i].color+"</font>\n" +
+                    "                        <div style='display: inline-block;width: 32px;height: 32px;background-color: "+data.data[i].color+"' ></div>\n" +
                     "                    </td>\n" +
                     "                    <td width=\"10%\">\n" +
                     "                        "+data.data[i].shengxiao+"\n" +
@@ -50,6 +50,51 @@ function loaddata(year){
         }
 
     });
+
+
+}
+
+
+
+function loadmaxyear(){
+
+    var year;
+
+    $.ajax({
+        url:"../api/loadmaxyear.do",
+        type:"post",
+        data:{year:year},
+        success:function(data){
+            year = data.data;
+        },
+        async:false
+
+    });
+
+    return year;
+
+}
+
+
+
+
+function deleteSpiritCode(){
+
+    if(confirm("您確定要刪除"+$("#yearcheck").val()+"年的號碼記錄嗎？")){
+        $.ajax({
+            url: "../api/deleteSpiritCode.do",
+            type: "post",
+            data: {year: $("#yearcheck").val()},
+            success: function (data) {
+                alert(data.msg);
+                var y = loadmaxyear();
+                $("#yearcheck").val(y)
+                $("#textYear").html(y)
+                loaddata();
+            }
+        });
+    }
+
 
 
 }
