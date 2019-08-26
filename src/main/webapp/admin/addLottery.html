@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="css/pintuer.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/pintuer.js"></script>
+
+
+</head>
+<body>
+
+
+
+
+
+
+
+
+<form method="post" action="../api/addSpiritcode.do" id="listform">
+
+    <div class="panel admin-panel">
+        <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong> <a href="" style="float:right; display:none;">添加字段</a></div>
+        <div class="padding border-bottom">
+           生成新球码
+        </div>
+        <table class="table table-hover text-center">
+            <tr>
+                <th colspan="4">年份:<input type="text" name="year"></th>
+            </tr>
+
+            <tr>
+                <th width="100" style="text-align:left; padding-left:20px;">球号</th>
+                <th width="30%">颜色</th>
+                <th width="30%">生肖</th>
+                <th width="30%">五行</th>
+            </tr>
+            <tbody id="content">
+
+            </tbody>
+
+        </table>
+    </div>
+    <script>
+        function loadtr(){
+            var tbody = document.getElementById("content");
+            var sumitem = "";
+            for (var i = 1 ; i <= 49; i++) {
+                var item = " <tr>\n" +
+                    "                    <td style=\"text-align:left; padding-left:20px;\">\n" +
+                    "                        "+i+"<input type='hidden' name='code' value='"+i+"'>\n" +
+                    "                    </td>\n" +
+                    "<td>\n" +
+                    "                            <select name='color'>\n" +
+                    "                                <option style=\"background-color: red;color: white\" value='red'>红色</option>\n" +
+                    "                                <option style=\"background-color: green;color: white\" value='green'>绿色</option>\n" +
+                    "                                <option style=\"background-color: blue;color: white\" value='blue'>蓝色</option>\n" +
+                    "                            </select>\n" +
+                    "                        </td>\n" +
+                    "                        <td width=\"10%\">\n" +
+                    "                            <select name='shengxiao'>\n" +
+                    "                                <option style=\"color: orangered\" value='鼠'>鼠</option>\n" +
+                    "                                <option style=\"color: orangered\" value='牛'>牛</option>\n" +
+                    "                                <option style=\"color: orangered\" value='虎'>虎</option>\n" +
+                    "                                <option style=\"color: orangered\" value='兔'>兔</option>\n" +
+                    "                                <option style=\"color: orangered\" value='龙'>龙</option>\n" +
+                    "                                <option style=\"color: orangered\" value='蛇'>蛇</option>\n" +
+                    "                                <option style=\"color: orangered\" value='马'>马</option>\n" +
+                    "                                <option style=\"color: orangered\" value='羊'>羊</option>\n" +
+                    "                                <option style=\"color: orangered\" value='猴'>猴</option>\n" +
+                    "                                <option style=\"color: orangered\" value='鸡'>鸡</option>\n" +
+                    "                                <option style=\"color: orangered\" value='狗'>狗</option>\n" +
+                    "                                <option style=\"color: orangered\" value='猪'>猪</option>\n" +
+                    "\n" +
+                    "                            </select>\n" +
+                    "                        </td>\n" +
+                    "                        <td>\n" +
+                    "                            <select name='jmsht'>\n" +
+                    "                                <option style=\"color: orangered\" value='金'>金</option>\n" +
+                    "                                <option style=\"color: green\" value='木'>木</option>\n" +
+                    "                                <option style=\"color: #03b6fd\" value='水'>水</option>\n" +
+                    "                                <option style=\"color: red\" value='火'>火</option>\n" +
+                    "                                <option style=\"color: #abab28\" value='土'>土</option>\n" +
+                    "\n" +
+                    "                            </select>\n" +
+                    "                        </td>"+
+                    "                </tr>";
+                sumitem+= item;
+            }
+            sumitem += "<tr>" +
+                "           <td colspan='4'><button type='button' onclick='addspiritcode()'>提交</button>" +
+                "           </td>" +
+                "       </tr>";
+            tbody.innerHTML = sumitem;
+        }
+        loadtr();
+    </script>
+</form>
+<script type="text/javascript">
+
+    //搜索
+    function changesearch(){
+
+    }
+
+    //单个删除
+    function del(id,mid,iscid){
+        if(confirm("您确定要删除吗?")){
+
+        }
+    }
+
+    //全选
+    $("#checkall").click(function(){
+        $("input[name='id[]']").each(function(){
+            if (this.checked) {
+                this.checked = false;
+            }
+            else {
+                this.checked = true;
+            }
+        });
+    })
+
+    //批量删除
+    function DelSelect(){
+        var Checkbox=false;
+        $("input[name='id[]']").each(function(){
+            if (this.checked==true) {
+                Checkbox=true;
+            }
+        });
+        if (Checkbox){
+            var t=confirm("您确认要删除选中的内容吗？");
+            if (t==false) return false;
+            $("#listform").submit();
+        }
+        else{
+            alert("请选择您要删除的内容!");
+            return false;
+        }
+    }
+
+    //批量排序
+    function sorts(){
+        var Checkbox=false;
+        $("input[name='id[]']").each(function(){
+            if (this.checked==true) {
+                Checkbox=true;
+            }
+        });
+        if (Checkbox){
+
+            $("#listform").submit();
+        }
+        else{
+            alert("请选择要操作的内容!");
+            return false;
+        }
+    }
+
+
+    //批量首页显示
+    function changeishome(o){
+        var Checkbox=false;
+        $("input[name='id[]']").each(function(){
+            if (this.checked==true) {
+                Checkbox=true;
+            }
+        });
+        if (Checkbox){
+
+            $("#listform").submit();
+        }
+        else{
+            alert("请选择要操作的内容!");
+
+            return false;
+        }
+    }
+
+    //批量推荐
+    function changeisvouch(o){
+        var Checkbox=false;
+        $("input[name='id[]']").each(function(){
+            if (this.checked==true) {
+                Checkbox=true;
+            }
+        });
+        if (Checkbox){
+
+
+            $("#listform").submit();
+        }
+        else{
+            alert("请选择要操作的内容!");
+
+            return false;
+        }
+    }
+
+    //批量置顶
+    function changeistop(o){
+        var Checkbox=false;
+        $("input[name='id[]']").each(function(){
+            if (this.checked==true) {
+                Checkbox=true;
+            }
+        });
+        if (Checkbox){
+
+            $("#listform").submit();
+        }
+        else{
+            alert("请选择要操作的内容!");
+
+            return false;
+        }
+    }
+
+
+    //批量移动
+    function changecate(o){
+        var Checkbox=false;
+        $("input[name='id[]']").each(function(){
+            if (this.checked==true) {
+                Checkbox=true;
+            }
+        });
+        if (Checkbox){
+
+            $("#listform").submit();
+        }
+        else{
+            alert("请选择要操作的内容!");
+
+            return false;
+        }
+    }
+
+    //批量复制
+    function changecopy(o){
+        var Checkbox=false;
+        $("input[name='id[]']").each(function(){
+            if (this.checked==true) {
+                Checkbox=true;
+            }
+        });
+        if (Checkbox){
+            var i = 0;
+            $("input[name='id[]']").each(function(){
+                if (this.checked==true) {
+                    i++;
+                }
+            });
+            if(i>1){
+                alert("只能选择一条信息!");
+                $(o).find("option:first").prop("selected","selected");
+            }else{
+
+                $("#listform").submit();
+            }
+        }
+        else{
+            alert("请选择要复制的内容!");
+            $(o).find("option:first").prop("selected","selected");
+            return false;
+        }
+    }
+
+</script>
+<script src="js/spiritcode.js"></script>
+</body>
+</html>
