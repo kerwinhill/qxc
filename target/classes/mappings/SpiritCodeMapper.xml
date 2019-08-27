@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qxc.dao.SpiritCodeMapper" >
+  <resultMap id="BaseResultMap" type="com.qxc.pojo.SpiritCode" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="code" property="code" jdbcType="INTEGER" />
+    <result column="color" property="color" jdbcType="VARCHAR" />
+    <result column="shengxiao" property="shengxiao" jdbcType="VARCHAR" />
+    <result column="jmsht" property="jmsht" jdbcType="VARCHAR" />
+    <result column="year" property="year" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, code, color, shengxiao, jmsht, year
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from SpiritCode
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from SpiritCode
+    where year = #{year}
+  </delete>
+  <insert id="insert" parameterType="com.qxc.pojo.SpiritCode" >
+    insert into SpiritCode (id, code, color, 
+      shengxiao, jmsht, year
+      )
+    values (#{id,jdbcType=INTEGER}, #{code,jdbcType=INTEGER}, #{color,jdbcType=VARCHAR}, 
+      #{shengxiao,jdbcType=VARCHAR}, #{jmsht,jdbcType=VARCHAR}, #{year,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qxc.pojo.SpiritCode" >
+    insert into SpiritCode
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="color != null" >
+        color,
+      </if>
+      <if test="shengxiao != null" >
+        shengxiao,
+      </if>
+      <if test="jmsht != null" >
+        jmsht,
+      </if>
+      <if test="year != null" >
+        year,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=INTEGER},
+      </if>
+      <if test="color != null" >
+        #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="shengxiao != null" >
+        #{shengxiao,jdbcType=VARCHAR},
+      </if>
+      <if test="jmsht != null" >
+        #{jmsht,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null" >
+        #{year,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qxc.pojo.SpiritCode" >
+    update SpiritCode
+    <set >
+      <if test="code != null" >
+        code = #{code,jdbcType=INTEGER},
+      </if>
+      <if test="color != null" >
+        color = #{color,jdbcType=VARCHAR},
+      </if>
+      <if test="shengxiao != null" >
+        shengxiao = #{shengxiao,jdbcType=VARCHAR},
+      </if>
+      <if test="jmsht != null" >
+        jmsht = #{jmsht,jdbcType=VARCHAR},
+      </if>
+      <if test="year != null" >
+        year = #{year,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qxc.pojo.SpiritCode" >
+    update SpiritCode
+    set code = #{code,jdbcType=INTEGER},
+      color = #{color,jdbcType=VARCHAR},
+      shengxiao = #{shengxiao,jdbcType=VARCHAR},
+      jmsht = #{jmsht,jdbcType=VARCHAR},
+      year = #{year,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-cn">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>企业模版二</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/flexslider.css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="js/jquery.flexslider.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/thems.css">
+  <link rel="stylesheet" type="text/css" href="css/responsive.css">
+  <script language="javascript">
+    $(window).load(function () {
+
+     // if (window.location.pathname.split('.').pop().toLowerCase() == 'html' || window.location.pathname.split('.').pop().toLowerCase() == '/') {
+        $('.flexslider').flexslider({
+          animation: "slider",              //String: Select your animation type, "fade" or "slide"图片变换方式：淡入淡出或者滑动
+          slideDirection: "horizontal",   //String: Select the sliding direction, "horizontal" or "vertical"图片设置为滑动式时的滑动方向：左右或者上下
+          slideshow: true,                //Boolean: Animate slider automatically 载入页面时，是否自动播放
+          slideshowSpeed: 7000,           //Integer: Set the speed of the slideshow cycling, in milliseconds 自动播放速度毫秒
+          animationDuration: 600,         //Integer: Set the speed of animations, in milliseconds动画淡入淡出效果延时
+          directionNav: true,             //Boolean: Create navigation for previous/next navigation? (true/false)是否显示左右控制按钮
+          controlNav: true,               //Boolean: Create navigation for paging control of each clide? Note: Leave true for manualControls usage是否显示控制菜单
+          keyboardNav: true,              //Boolean: Allow slider navigating via keyboard left/right keys键盘左右方向键控制图片滑动
+          mousewheel: false,              //Boolean: Allow slider navigating via mousewheel鼠标滚轮控制制图片滑动
+          prevText: "Previous",           //String: Set the text for the "previous" directionNav item
+          nextText: "Next",               //String: Set the text for the "next" directionNav item
+          pausePlay: false,               //Boolean: Create pause/play dynamic element
+          pauseText: 'Pause',             //String: Set the text for the "pause" pausePlay item
+          playText: 'Play',               //String: Set the text for the "play" pausePlay item
+          randomize: false,               //Boolean: Randomize slide order 是否随即幻灯片
+          slideToStart: 0,                //Integer: The slide that the slider should start on. Array notation (0 = first slide)初始化第一次显示图片位置
+          animationLoop: true,            //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end 是否循环滚动
+          pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
+          pauseOnHover: false,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
+          controlsContainer: "",          //Selector: Declare which container the navigation elements should be appended too. Default container is the flexSlider element. Example use would be ".flexslider-container", "#container", etc. If the given element is not found, the default action will be taken.
+          manualControls: "",             //Selector: Declare custom control navigation. Example would be ".flex-control-nav li" or "#tabs-nav li img", etc. The number of elements in your controlNav should match the number of slides/tabs.自定义控制导航
+          manualControlEvent: "",          //String:自定义导航控制触发事件:默认是click,可以设定hover
+          start: function () { },            //Callback: function(slider) - Fires when the slider loads the first slide
+          before: function () { },           //Callback: function(slider) - Fires asynchronously with each slider animation
+          after: function () { },            //Callback: function(slider) - Fires after each slider animation completes
+          end: function () { }
+        });
+  //    }
+    });
+  </script>
+</head>
+
+<body>
+  <div class="head clearfix">
+    <div class="logo">
+      <a href="index.html" target="_self"><img src="images/logo.jpg" alt="LOGO" width="226" height="74"></a>
+    </div>
+    <div class="head_r">
+      <div class="lang"></div>
+      <ul class="nav clearfix" id="nav">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="c718.html">公司简介</a></li>
+        <li><a href="lc719_1.html">开奖结果</a></li>
+        <li><a href="lc720_1.html">产品展示</a></li>
+        <li><a href="c721.html">招商加盟</a></li>
+        <li><a href="c727.html">人才招聘</a></li>
+        <li><a href="c722.html">联系我们</a></li>
+      </ul>
+      <div class="nav_m">
+        <span class="n_icon">&nbsp;</span>
+        <ul id="m_nav">
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="banner">
+    <div class="slider">
+      <div class="flexslider">
+        <ul class="slides">
+          <li><a href=""><img src="images/banner.jpg" alt="Banner"></a></li>
+          <li><a href=""><img src="images/banner.jpg" alt="Banner"></a></li>
+          <li><a href=""><img src="images/banner.jpg" alt="Banner"></a></li>
+          <li><a href=""><img src="images/banner.jpg" alt="Banner"></a></li>
+          <li><a href=""><img src="images/banner.jpg" alt="Banner"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <dl class="i_about clearfix">
+    <dt>
+      <img src="images/pic3.jpg" alt="">
+    </dt>
+    <dd>
+      <div class="i_title">
+        公司简介
+        <a href="c718.html" class="more">MORE</a>
+      </div>
+      <div class="ctn">
+        <p>深圳前海信本财富管理有限公司（简称：信本财富）于2015年3月份在深圳注册成立。是一家专注于为高净值客户及机构服务的综合性财富管理平台。</p>
+        <p>
+          信本财富主要为客户提供资产管理、财富管理、投资管理、互联网金融等核心业务。业务领域包括为高净值客户提供全面的财富保值、增值、资产传承、金融服务定制，以及资本中介、投资咨询等个性化管家式服务。同时顺应新金融发展趋势和响应国家”互联网+“发展战略，我们积极布局大数据金融、第三方支付、众筹等业务领域，努力推动互联网金融纵深发展，以共享互联网金融发展之成果…
+        </p>
+      </div>
+    </dd>
+  </dl>
+  <div class="hui_bg">
+    <div class="i_new">
+      <div class="i_title">
+        最新开奖
+        <a href="lc719_1.html" class="more">查看更多</a>
+      </div>
+      <div class="i_newm clearfix">
+        <div style="padding: 5px 6px;" id="kaijiangDiv">
+          <div class="current">
+            <table width="100%" border="0" bordercolorlight="#000000" bordercolordark="#FFFFFF" bgcolor="#EFF7FE"
+              height="50">
+              <tbody>
+                <tr>
+                  <td colspan="2" class="topkjgdcsleft">
+                    <div>第 101 期 開獎結果:</div>
+                    <div class="topkjgdcsright">
+                      <marquee direction="left">
+                        <font color="blue" style="font-size:18px;font-weight: bold;">48</font>-
+                        <font color="green" style="font-size:18px;font-weight: bold;">27</font>-
+                        <font color="green" style="font-size:18px;font-weight: bold;">32</font>-
+                        <font color="red" style="font-size:18px;font-weight: bold;">35</font>-
+                        <font color="green" style="font-size:18px;font-weight: bold;">05</font>-
+                        <font color="blue" style="font-size:18px;font-weight: bold;">04</font>&nbsp;&nbsp;T&nbsp;
+                        <font color="blue" style="font-size:18px;font-weight: bold;">41</font>
+                      </marquee>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="kjbegohot">
+                      <table class="numbers">
+                        <tbody>
+                          <tr>
+                            <td><span class="ball  blue">48</span></td>
+                            <td><span class="ball  green">27</span></td>
+                            <td><span class="ball  green">32</span></td>
+                            <td><span class="ball  red">35</span></td>
+                            <td><span class="ball  green">05</span></td>
+                            <td><span class="ball  blue">04</span></td>
+                            <td><span class="plus"></span></td>
+                            <td><span class="ball  blue">41</span></td>
+                          </tr>
+                          <tr>
+                            <td>鼠</td>
+                            <td>鸡</td>
+                            <td>龙</td>
+                            <td>牛</td>
+                            <td>羊</td>
+                            <td>猴</td>
+                            <td></td>
+                            <td>羊</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="2" height="29">
+                    <div align="center">
+                      <span style=" color: #000; font-size: 12px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;下一期2019年 第
+                        <font color="#FF0000">102</font>期台灣七星彩開獎時間:&nbsp;2019年08月26日 21:30:00</span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="i_brand">
+    <ul class="i_brd_m clearfix">
+      <li>
+        <h6>产品展示</h6><a href="lc720_1.html"><img src="images/pic4.jpg" alt="产品展示"></a>
+      </li>
+      <li>
+        <h6>招商加盟</h6><a href="c721.html"><img src="images/pic5.jpg" alt="招商加盟"></a>
+      </li>
+      <li style="margin-right: 0px;">
+        <h6>人才招聘</h6><a href="c727.html"><img src="images/pic6.jpg" alt="人才招聘"></a>
+      </li>
+    </ul>
+  </div>
+  <div class="foot_bg">
+    <div class="foot">
+      <div class="f_nav">
+        <ul id="foot_nav">
+        </ul>
+      </div>
+      <div class="f_m">
+        <p>客服热线：400-800-8888</p>
+        <p>公司电话：0755-66803070</p>
+        <p>公司传真：0755-66803070</p>
+        <p>办公邮箱：XBCF@xinbencaifu.com</p>
+        <p>公司地址： 深圳市罗湖区深南东路5016号京基100大厦A座5108</p>
+        <p>COPYRIGHT © 2015 粤ICP备123456789号 深圳前海信本财富管理有限公司, ALL RIGHTS RESERVED . <a href="http://wang.market"
+            target="_blank">网市场</a></p>
+        <ul class="code clearfix">
+          <li> <img src="images/weixin_gzh.png" alt="" width="95" height="95">
+            <p>扫描关注信本财富</p>
+          </li>
+          <li> <img src="images/weixin_gzh.png" alt="" width="95" height="95">
+            <p>扫描关注共赢国际</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script>
+
+    if (window.location.pathname.split('.').pop().toLowerCase() == 'html' || window.location.pathname.split('.').pop().toLowerCase() == '/') {
+      //由JS自动复制头部、尾部的nav导航
+      try {
+        document.getElementById("m_nav").innerHTML = document.getElementById("nav").innerHTML;
+        document.getElementById("foot_nav").innerHTML = document.getElementById("nav").innerHTML;
+      } catch (err) { }
+
+      //由JS自动复制内页左侧的nav导航
+      try {
+        document.getElementById("nei_left_nav").innerHTML = document.getElementById("nav").innerHTML;
+      } catch (err) { }
+    }
+  </script>
+
+  <script src="js/kaijiang.js"></script>
+  <script>
+    $(function(){
+      var y = loadmaxyear();
+      console.log(y);
+      loaddata(y);
+
+    });
+  </script>
+  <div class="layui-layer-move"></div>
+</body>
+
+</html>

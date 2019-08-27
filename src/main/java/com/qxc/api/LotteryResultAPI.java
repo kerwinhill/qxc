@@ -47,6 +47,14 @@ public class LotteryResultAPI {
     }
 
 
+    @RequestMapping("/queryLastResult.do")
+    public APIRequest queryLastResult(Integer year){
+        return services.queryLastResult(year);
+    }
+
+
+
+
 
 
 

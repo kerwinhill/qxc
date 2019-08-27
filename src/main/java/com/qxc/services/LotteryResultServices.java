@@ -70,6 +70,7 @@ public class LotteryResultServices {
         return request;
     }
 
+
     public APIRequest queryLotteryResultDetails(Integer year) {
         APIRequest request = null;
         if(year == null ){
@@ -80,4 +81,16 @@ public class LotteryResultServices {
         }
         return request;
     }
+
+    public APIRequest queryLastResult(Integer year) {
+        APIRequest request = null;
+        if(year == null ){
+            request = new APIRequest(false,"参数错误！");
+        }else{
+            List<LotteryResultDetails> data = mapper.queryLastDetails(year);
+            request = new APIRequest(true,"成功！",data);
+        }
+        return request;
+    }
+
 }
