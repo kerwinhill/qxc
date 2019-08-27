@@ -78,6 +78,6 @@ public interface LotteryResultMapper {
     List<LotteryResultDetails> queryLastDetails(Integer year);
 
 
-    @Select("select year from LotteryResult group by year")
+    @Select("select year from LotteryResult group by year order by year desc")
     List<Integer> queryYear();
 }
